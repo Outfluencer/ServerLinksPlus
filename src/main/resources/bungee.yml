@@ -1,0 +1,5 @@
+name: ServerLinksPlus
+version: '${project.version}'
+main: net.outfluencer.serverlinksplus.ServerLinksPlus
+author: Outfluencer
+
