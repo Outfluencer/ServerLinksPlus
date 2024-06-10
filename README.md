@@ -1,3 +1,5 @@
+# Note
+you can only use http and https urls, if you want to link another protocol you need to create a website and redirect it via browser
 # Permissions
  - serverlinksplus.command (access the default command to reload the config)
 
