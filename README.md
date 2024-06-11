@@ -1,4 +1,6 @@
 This is a BungeeCord Plugin, put it into you "plugins" folder
+# Config
+config.yml to specify the links in plugins/ServerLinksPlus/ folder
 # Note
 you can only use http and https urls, if you want to link another protocol you need to create a website and redirect it via browser
 # Permissions
