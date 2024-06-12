@@ -36,7 +36,7 @@ public final class ServerLinksPlus extends Plugin implements Listener {
         } catch (IOException e) {
             Map<String, String> defaultLinks = new TreeMap<>();
             // Built-in
-            // report bug will also shown in error screens
+            // report bug will also be shown in error screens
             // ServerLinks.LinkType.REPORT_BUG
             for (ServerLinks.LinkType value : ServerLinks.LinkType.values()) {
                 defaultLinks.put(value.toString(), "https://" + value.name().toLowerCase() + ".com");
@@ -59,11 +59,8 @@ public final class ServerLinksPlus extends Plugin implements Listener {
                 buildIn = ServerLinks.LinkType.valueOf(key);
             } catch (IllegalArgumentException ignored) {
             }
-            if (buildIn == null) {
-                return new ServerLinks.Link(Either.right(TextComponent.fromLegacy(key)), config.getString(key));
-            } else {
-                return new ServerLinks.Link(Either.left(buildIn), config.getString(key));
-            }
+            return new ServerLinks.Link(buildIn == null ? Either.right(TextComponent.fromLegacy(key)) : Either.left(buildIn), config.getString(key));
+
         }).toArray(ServerLinks.Link[]::new);
         serverLinks = new ServerLinks(links);
 
